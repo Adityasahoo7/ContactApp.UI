@@ -1,17 +1,43 @@
-<h2>Contact Details</h2>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg">
+        <div class="card-header bg-info text-white text-center">
+          <h3 class="mb-0">Contact Details</h3>
+        </div>
 
-<!-- Error Message -->
-<div *ngIf="errorMessage" style="color: red;">
-  {{ errorMessage }}
+        <div class="card-body">
+          <!-- Error Message -->
+          <div *ngIf="errorMessage" class="alert alert-danger text-center">
+            {{ errorMessage }}
+          </div>
+
+          <!-- Contact Info -->
+          <div *ngIf="contact">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <strong>Full Name:</strong> {{ contact.fullname }}
+              </li>
+              <li class="list-group-item">
+                <strong>Email:</strong> {{ contact.email }}
+              </li>
+              <li class="list-group-item">
+                <strong>Phone:</strong> {{ contact.phone }}
+              </li>
+              <li class="list-group-item">
+                <strong>Address:</strong> {{ contact.address }}
+              </li>
+            </ul>
+          </div>
+
+          <!-- Back Button -->
+          <div class="mt-4 text-center">
+            <button class="btn btn-secondary" routerLink="/contacts">
+              <i class="bi bi-arrow-left-circle"></i> Back to List
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<!-- Contact Information -->
-<div *ngIf="contact">
-  <p><strong>Full Name:</strong> {{ contact.fullname }}</p>
-  <p><strong>Email:</strong> {{ contact.email }}</p>
-  <p><strong>Phone:</strong> {{ contact.phone }}</p>
-  <p><strong>Address:</strong> {{ contact.address }}</p>
-</div>
-
-<!-- Optional: Back Button -->
-<button routerLink="/contacts">Back to List</button>

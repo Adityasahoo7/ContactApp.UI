@@ -1,0 +1,12 @@
+.card {
+  border-radius: 1rem;
+}
+
+table {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+button {
+  min-width: 80px;
+}

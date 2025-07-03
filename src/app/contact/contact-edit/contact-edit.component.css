@@ -1,0 +1,12 @@
+input, textarea {
+  border-radius: 0.5rem !important;
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0a800 !important;
+  color: #fff;
+}

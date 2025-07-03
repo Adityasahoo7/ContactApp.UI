@@ -1,0 +1,15 @@
+.card {
+  border-radius: 1rem;
+}
+
+input, textarea {
+  border-radius: 0.5rem !important;
+}
+
+button {
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838 !important;
+}

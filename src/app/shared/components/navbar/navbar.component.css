@@ -26,3 +26,9 @@
 .navbar .nav-links li a.active {
   border-bottom: 2px solid #fff;
 }
+/* Highlight active link */
+.nav-link.active {
+  font-weight: bold;
+  color: #0d6efd !important;
+  border-bottom: 2px solid #0d6efd;
+}
