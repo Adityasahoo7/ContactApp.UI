@@ -1,0 +1,30 @@
+<h2>Add New Contact</h2>
+
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+  <div>
+    <label>Full Name:</label><br />
+    <input type="text" name="fullname" [(ngModel)]="contact.fullname" required />
+  </div>
+
+  <div>
+    <label>Email:</label><br />
+    <input type="email" name="email" [(ngModel)]="contact.email" required />
+  </div>
+
+  <div>
+    <label>Phone:</label><br />
+    <input type="number" name="phone" [(ngModel)]="contact.phone" required />
+  </div>
+
+  <div>
+    <label>Address:</label><br />
+    <textarea name="address" [(ngModel)]="contact.address" required></textarea>
+  </div>
+
+  <button type="submit">Add Contact</button>
+</form>
+
+<!-- Show error if any -->
+<div *ngIf="errorMessage" style="color: red; margin-top: 10px;">
+  {{ errorMessage }}
+</div>

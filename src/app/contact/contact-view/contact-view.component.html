@@ -1,0 +1,17 @@
+<h2>Contact Details</h2>
+
+<!-- Error Message -->
+<div *ngIf="errorMessage" style="color: red;">
+  {{ errorMessage }}
+</div>
+
+<!-- Contact Information -->
+<div *ngIf="contact">
+  <p><strong>Full Name:</strong> {{ contact.fullname }}</p>
+  <p><strong>Email:</strong> {{ contact.email }}</p>
+  <p><strong>Phone:</strong> {{ contact.phone }}</p>
+  <p><strong>Address:</strong> {{ contact.address }}</p>
+</div>
+
+<!-- Optional: Back Button -->
+<button routerLink="/contacts">Back to List</button>

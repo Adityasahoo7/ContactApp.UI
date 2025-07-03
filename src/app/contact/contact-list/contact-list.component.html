@@ -1,0 +1,33 @@
+<h2>Contact List</h2>
+
+<!-- Show error message if any -->
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<!-- Show contact table -->
+<table border="1" cellpadding="10" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Fullname</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contacts">
+      <td>{{ contact.fullname }}</td>
+      <td>{{ contact.email }}</td>
+      <td>{{ contact.phone }}</td>
+      <td>{{ contact.address }}</td>
+      <td>
+        <button [routerLink]="['/contacts/view', contact.id]">View</button>
+        <button [routerLink]="['/contacts/edit', contact.id]">Edit</button>
+        <button (click)="deleteContact(contact.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- No data message -->
+<p *ngIf="contacts.length === 0">No contacts found.</p>
