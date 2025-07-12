@@ -10,7 +10,7 @@ export class ContactListComponent implements OnInit {
   contacts: Contact[] = [];
   errorMessage: string = '';
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService) { }
 
   ngOnInit(): void {
     this.loadContacts();
@@ -27,6 +27,11 @@ export class ContactListComponent implements OnInit {
       },
     });
   }
+
+  isAdmin(): boolean {
+    return localStorage.getItem('role') === 'Admin';
+  }
+
 
   // Delete contact by id
   deleteContact(id: string): void {

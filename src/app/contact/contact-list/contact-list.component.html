@@ -33,7 +33,33 @@
               <td>{{ contact.email }}</td>
               <td>{{ contact.phone }}</td>
               <td>{{ contact.address }}</td>
+              <!-- Actions Column -->
               <td>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+                  <!-- View: Everyone can view -->
+                  <button class="btn btn-sm btn-info" [routerLink]="['/contacts/view', contact.id]">
+                    <i class="bi bi-eye"></i> View
+                  </button>
+
+                  <!-- Edit: Only Admin -->
+                  <!-- <button *ngIf="isAdmin()" class="btn btn-sm btn-warning"
+                    [routerLink]="['/contacts/edit', contact.id]">
+                    <i class="bi bi-pencil"></i> Edit
+                  </button> -->
+                  <button class="btn btn-sm btn-warning"
+                    [routerLink]="['/contacts/edit', contact.id]">
+                    <i class="bi bi-pencil"></i> Edit
+                  </button>
+
+                  <!-- Delete: Only Admin -->
+                  <button *ngIf="isAdmin()" class="btn btn-sm btn-danger" (click)="deleteContact(contact.id)">
+                    <i class="bi bi-trash"></i> Delete
+                  </button>
+                </div>
+              </td>
+
+              <!-- <td>
                 <div class="d-flex justify-content-center gap-2 flex-wrap">
                   <button
                     class="btn btn-sm btn-info"
@@ -54,7 +80,7 @@
                     <i class="bi bi-trash"></i> Delete
                   </button>
                 </div>
-              </td>
+              </td> -->
             </tr>
           </tbody>
         </table>

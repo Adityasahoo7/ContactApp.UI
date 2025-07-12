@@ -10,6 +10,12 @@ import { ContactListComponent } from './contact/contact-list/contact-list.compon
 import { ContactAddComponent } from './contact/contact-add/contact-add.component';
 import { ContactEditComponent } from './contact/contact-edit/contact-edit.component';
 import { ContactViewComponent } from './contact/contact-view/contact-view.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+//import { NgIdleModule } from '@ng-idle/core';
+
 
 @NgModule({
   declarations: [
@@ -18,15 +24,22 @@ import { ContactViewComponent } from './contact/contact-view/contact-view.compon
     ContactListComponent,
     ContactAddComponent,
     ContactEditComponent,
-    ContactViewComponent
+    ContactViewComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+   //  NgIdleModule.forRoot(),
   ],
-  providers: [],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

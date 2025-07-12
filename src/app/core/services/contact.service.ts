@@ -28,6 +28,10 @@ export class ContactService {
   //   );
   // }
   getById(id: string): Observable<Contact> {
+    const headers = {
+    Authorization: `Bearer ${localStorage.getItem('token')}`
+  };
+
   return this.http.get<Contact>(`${this.baseUrl}/${id}`);
   }
 

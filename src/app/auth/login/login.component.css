@@ -1,0 +1,7 @@
+.card input {
+  border-radius: 0.5rem;
+}
+
+button:hover {
+  background-color: #0056b3 !important;
+}
