@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Contact } from 'src/app/models/contact.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ import { Contact } from 'src/app/models/contact.model';
 export class ContactService {
 
   // Update this to your real backend API URL
-  private baseUrl = 'https://localhost:7119/api/Contacts';
+  private baseUrl = `${environment.apiUrl}/Contacts`;
+  //private baseUrl = 'https://localhost:7119/api/Contacts';
 
   constructor(private http: HttpClient) {}
 
