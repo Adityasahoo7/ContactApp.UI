@@ -10,7 +10,6 @@ import { environment } from 'src/environments/environment';
 })
 export class ContactService {
 
-  // Update this to your real backend API URL
   private baseUrl = `${environment.apiUrl}/Contacts`;
   //private baseUrl = 'https://localhost:7119/api/Contacts';
 
